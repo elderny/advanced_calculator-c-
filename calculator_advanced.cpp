@@ -1,17 +1,13 @@
+/*
+Author : elderny (elderny1 from telegram)
+Usage: Advance Calculator with 2 options simple, and scientific
+date: 13/06/2021
+purpose: practice
+*/
+
 #include <iostream>
 #include <cmath>
 using namespace std;
-/*
-Create 2 classes:
-    1. SimpleCalculator - Takes input of 2 numbers using a utility function and perfoms +, -, *, / and displays the results using another function.
-    2. ScientificCalculator - Takes input of 2 numbers using a utility function and perfoms any four scientific operation of your chioice and displays the results using another function.
-
-    Create another class HybridCalculator and inherit it using these 2 classes:
-    Q1. What type of Inheritance are you using?
-    Q2. Which mode of Inheritance are you using?
-    Q3. Create an object of HybridCalculator and display results of simple and scientific calculator.
-    Q4. How is code reusability implemented?
-*/
 
 class SimpleCalculator
 {
@@ -48,6 +44,7 @@ public:
     }
 };
 
+// SCIENTIFIC CALCULATOR CLASS
 class ScientificCalculator : virtual public SimpleCalculator
 {
 public:
@@ -86,6 +83,7 @@ public:
     }
 };
 
+// This will display those two calculator classes
 class hybridCalculator : virtual public SimpleCalculator, public ScientificCalculator
 {
 protected:
@@ -103,6 +101,7 @@ public:
         y = b;
         z = c;
     }
+    //this will put any calculator in use depending upon users input
     void start_calc()
     {
         if (display == 1)
@@ -117,7 +116,7 @@ public:
         }
     }
 };
-
+//This will just give a bit of information about usage
 void type_checking(int ask_value)
 {
     if (ask_value == 1)
@@ -137,19 +136,33 @@ int main()
 {
     int ask, num1, num2, sign;
     hybridCalculator elderny;
+
     cout << "\nWelcome to the calculator made by Elderny\n"
          << endl;
     cout << "Type '1' to use Simple Calculator or Type '2' to use Scientific calculator\nType Here: ";
+
+    //asking which calculator to use
     cin >> ask;
+
+    //applying that input here
     elderny.slct_type(ask);
+
+    //asking for numbers
     cout << "\nType your first number:\nNo: ";
     cin >> num1;
+
     cout << "\nType your second number:\nNo: ";
     cin >> num2;
+
+    //displaying the options in calculators
     type_checking(ask);
     cin >> sign;
     cout << endl;
+
+    //collecting the user inputs together
     elderny.input_value(num1, num2, sign);
+
+    //putting everything together and showing the results
     cout << "\n\n<---- RESULTS ---->\n\n";
     elderny.start_calc();
     return 0;
