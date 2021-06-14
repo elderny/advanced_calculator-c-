@@ -76,6 +76,14 @@ public:
             cout << "The Cube of Number " << a << " is " << pow(a, 3) << endl;
             cout << "The Cube of Number " << b << " is " << pow(b, 3) << endl;
             break;
+        case 8:
+            cout << "The tan of "<<a<<" is "<< tan(a) << endl;
+            cout << "The tan of "<<b<<" is "<< tan(b) << endl;
+            break;
+        case 9:
+            cout << "The cos of "<<a<<" is "<<cos(a) << endl;
+            cout << "The cos of "<<b<<" is "<<cos(b) << endl;
+            break;
 
         default:
             break;
