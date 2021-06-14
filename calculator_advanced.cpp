@@ -137,7 +137,7 @@ void type_checking(int ask_value)
     {
         cout << "\n------You are using Scientific Calculator------\n"
              << endl;
-        cout << "Type '1' to add, '2' to subtract, '3' to multiply, '4' to divide, '5' to root, '6' to square, '7' to cube your numbers\nType here: ";
+        cout << "Type '1' to add, '2' to subtract, '3' to multiply, '4' to divide, '5' to root, '6' to square, '7' to cube your numbers, '8' for tan, '9' for cos\nType here: ";
     }
 }
 int main()
